@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/eolt/static/css/main.29d9d02a.chunk.css",
+    "main.css": "/eolt/static/css/main.b41f37b7.chunk.css",
     "main.js": "/eolt/static/js/main.ccd2a442.chunk.js",
     "main.js.map": "/eolt/static/js/main.ccd2a442.chunk.js.map",
     "runtime-main.js": "/eolt/static/js/runtime-main.5b88b946.js",
@@ -10,14 +10,14 @@
     "static/js/3.6d9efc3e.chunk.js": "/eolt/static/js/3.6d9efc3e.chunk.js",
     "static/js/3.6d9efc3e.chunk.js.map": "/eolt/static/js/3.6d9efc3e.chunk.js.map",
     "index.html": "/eolt/index.html",
-    "static/css/main.29d9d02a.chunk.css.map": "/eolt/static/css/main.29d9d02a.chunk.css.map",
+    "static/css/main.b41f37b7.chunk.css.map": "/eolt/static/css/main.b41f37b7.chunk.css.map",
     "static/js/2.26875d7a.chunk.js.LICENSE.txt": "/eolt/static/js/2.26875d7a.chunk.js.LICENSE.txt",
     "static/media/erc_eu_logo.10532ae9.jpg": "/eolt/static/media/erc_eu_logo.10532ae9.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.5b88b946.js",
     "static/js/2.26875d7a.chunk.js",
-    "static/css/main.29d9d02a.chunk.css",
+    "static/css/main.b41f37b7.chunk.css",
     "static/js/main.ccd2a442.chunk.js"
   ]
 }
