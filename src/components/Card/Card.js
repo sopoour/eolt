@@ -9,7 +9,7 @@ const Card = (props) => {
           <h1>{props.data.title}</h1>
         </a>
         <p> {props.data.preview}</p>
-        <p>{props.data.author}</p>
+        <p>Author: {props.data.author}</p>
       </div>
     </div>
   );
