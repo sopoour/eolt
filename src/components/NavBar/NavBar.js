@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Navbar.module.css";
+import useViewport from "../../hooks/useVIewport";
 
 const NavBar = (props) => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,16 +17,19 @@ const NavBar = (props) => {
 
   const navClasses = scrolled ? styles.scrolled : "";
 
+  const { width } = useViewport();
+  const breakpoint = 475;
+  const content =
+    width < breakpoint ? <h1>EoLT</h1> : <h1>Encyclopedia of Ludic Terms</h1>;
+
   return (
-    <React.Fragment>
-      <nav className={navClasses}>
-        <h1>EoLT</h1>
-        <div className={styles.buttonContainer}>
-          <button>About us</button>
-          <button>Support</button>
-        </div>
-      </nav>
-    </React.Fragment>
+    <nav className={navClasses}>
+      {content}
+      <div className={styles.buttonContainer}>
+        <button>About us</button>
+        <button>Support</button>
+      </div>
+    </nav>
   );
 };
 

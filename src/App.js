@@ -33,16 +33,17 @@ const App = () => {
     {
       id: Math.random(),
       title: "Representation",
-      preview: "The term representation originates from Latin and Old French denoting the act of bringing forth, exhibiting, and presenting.",
+      preview:
+        "The term representation originates from Latin and Old French denoting the act of bringing forth, exhibiting, and presenting.",
       author: "Ida",
-      url: "https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning"
-    }
+      url: "https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning",
+    },
   ];
 
   return (
-    <div style={{position: "relative"}}>
+    <div style={{ position: "relative" }}>
       <NavBar />
-      <Main data={DUMMY_DATA}></Main>
+      <Main />
       <Footer />
     </div>
   );

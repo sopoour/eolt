@@ -1,64 +1,112 @@
-import React from "react";
-import {
-  Box,
-  Container,
-  Row,
-  Column,
-  FooterLink,
-  Heading,
-} from "./FooterStyles";
+import styles from "./Footer.module.css"
 
 const Footer = () => {
   return (
-    <Box>
-      <Container>
-        <Row>
-          <Column>
-            <Heading>About Us</Heading>
-            <FooterLink href="#">Aim</FooterLink>
-            <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Services</Heading>
-            <FooterLink href="#">Writing</FooterLink>
-            <FooterLink href="#">Internships</FooterLink>
-            <FooterLink href="#">Coding</FooterLink>
-            <FooterLink href="#">Teaching</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Contact Us</Heading>
-            <FooterLink href="#">Uttar Pradesh</FooterLink>
-            <FooterLink href="#">Ahemdabad</FooterLink>
-            <FooterLink href="#">Indore</FooterLink>
-            <FooterLink href="#">Mumbai</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Social Media</Heading>
-            <FooterLink href="#">
-              <i className="fab fa-facebook-f">
-                <span style={{ marginLeft: "10px" }}>Facebook</span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-instagram">
-                <span style={{ marginLeft: "10px" }}>Instagram</span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-twitter">
-                <span style={{ marginLeft: "10px" }}>Twitter</span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-youtube">
-                <span style={{ marginLeft: "10px" }}>Youtube</span>
-              </i>
-            </FooterLink>
-          </Column>
-        </Row>
-      </Container>
-    </Box>
+    <footer>
+      {/* <!-- Footer main --> */}
+      <section className={styles.ftMain}>
+        <div className={styles.ftMainItem}>
+          <h2 className={styles.ftTitle}>About</h2>
+          <ul>
+            <li>
+              <a href="/">Project Group</a>
+            </li>
+            <li>
+              <a href="/">Editorial Information</a>
+            </li>
+            <li>
+              <a href="/">How to Cite the EoLT</a>
+            </li>
+            <li>
+              <a href="/">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.ftMainItem}>
+          <h2 className={styles.ftTitle}>Browse</h2>
+          <ul>
+            <li>
+              <a href="/">Table of Contents</a>
+            </li>
+            <li>
+              <a href="/">Archives</a>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.ftMainItem}>
+          <h2 className={styles.ftTitle}>Support EoLT</h2>
+          <ul>
+            <li>
+              <a href="/">How to support us</a>
+            </li>
+            <li>
+              <a href="/">Make A Donation</a>
+            </li>
+          </ul>
+        </div>
+       {/*  <div className={styles.ftMainItem}>
+          <h2 className={styles.ftTitle}>Stay Updated</h2>
+          <p>Subscribe to our newsletter to get our latest news.</p>
+          <form>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter email address"
+            />
+            <input type="submit" value="Subscribe" />
+          </form>
+        </div> */}
+      </section>
+
+      {/* <!-- Footer social --> */}
+      <section className={styles.ftSocial}>
+        <ul className={styles.ftSocialList}>
+          <li>
+            <a href="/">
+              <i className="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <i className="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <i className="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <i className="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <i className="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <i className="fab fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      {/* <!-- Footer legal --> */}
+      <section className={styles.ftLegal}>
+        <ul className={styles.ftLegalList}>
+         {/*  <li>
+            <a href="/">Terms &amp; Conditions</a>
+          </li>
+          <li>
+            <a href="/">Privacy Policy</a>
+          </li> */}
+          <li>The Encyclopedia of Ludic Terms is Copyright &copy; 2021 by XXX</li>
+        </ul>
+      </section>
+    </footer>
   );
 };
 

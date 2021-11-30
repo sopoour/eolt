@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./Main.module.css";
-import Search from "../Search/Search";
+import Wiki from "../Wiki/Wiki";
 import Info from "../Info/Info";
+import useApiData from "../../hooks/useApiData";
 
 const Main = (props) => {
+  const { data, httpError, isLoading } = useApiData();
   return (
     <div className={styles.wrapper}>
-      <Search data={props.data} />
+      <Wiki isLoading={isLoading} httpError={httpError} data={data} />
       <Info />
     </div>
   );

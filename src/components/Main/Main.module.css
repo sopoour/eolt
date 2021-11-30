@@ -5,6 +5,7 @@
   height: 100%;
   padding-top: var(--height-header);
   min-height: calc(140rem - var(--height-header));
+  flex: 1;
 }
 
 @media (--tablet) {

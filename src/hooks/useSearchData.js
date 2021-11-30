@@ -8,18 +8,13 @@ const useSearchData = (data) => {
       setSearchterm(event.target.value);
     };
 
-    /* How useEffect works:
-    * 1. useEffect hook executes whenever dependency of method gets changed
-    * 2. dependency searchTerm gets changed on every input by user
-    * 3. this in turn executes function in first argument (=results)
-    */
     useEffect(() => {
       (async () => {
           const results = await data.filter(value => {
               return (
                   //search for either character or actor/actress name
-                  value.name.toLowerCase().includes(searchTerm.toLowerCase())
-                  || value.summary.toLowerCase().includes(searchTerm.toLowerCase())
+                  value.title.toLowerCase().includes(searchTerm.toLowerCase())
+                  || value.preview.toLowerCase().includes(searchTerm.toLowerCase())
               )}
           )
           //then the filtered list (results) is set on the searchResults state by using the setSearchResults method

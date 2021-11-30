@@ -1,36 +1,43 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
 
 const useApiData = () => {
-    //TODO: create one const for castData and one for episodeData
-    
-    const [castData, setCastData] = useState([]);
-    const [episodeData, setEpisodeData] = useState([]);
+  const [data, setData] = useState([]);
+  const [httpError, setHttpError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        (async () => {
-            const responseCast = await fetch(
-                'https://api.tvmaze.com/shows/143/cast'
-            );
-            const dataCast = await responseCast.json()
-            //Update castData state with the data we get from API
-            setCastData(dataCast);
+  useEffect(() => {
+    (async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch("https://eolt-ea153-default-rtdb.europe-west1.firebasedatabase.app/content.json");
+        if (!response.ok){
+            throw new Error("Semething went wrong with fetching the data")
+        }
+        const data = await response.json();
+        
+        let loadedContent = [];
 
-            const responseEpisode = await fetch(
-                'https://api.tvmaze.com/shows/143/episodes'
-            );
-            const dataEpisode = await responseEpisode.json()
-            //Update episodeData state with the data we get from API
-            setEpisodeData(dataEpisode);
-        }) 
-        //call function right away
-        ();
-        //this allows me to use the lifecycle method inside of a functional component
-    }, []);
+        for(const key in data) {
+            loadedContent.push({
+                id: key,
+                title: data[key].title,
+                preview: data[key].preview,
+                author: data[key].author,
+                url: data[key].url
+            })
+        }
+        setData(loadedContent);
+        setIsLoading(false)
+      } catch (error) {
+        setIsLoading(false);
+        setHttpError(error.message);
+      }
+    })();
+    //call function right away
+    //this allows me to use the lifecycle method inside of a functional component
+  }, []);
 
-
-    return {castData, episodeData};
+  return { data, httpError, isLoading };
 };
 
 export default useApiData;
-
-

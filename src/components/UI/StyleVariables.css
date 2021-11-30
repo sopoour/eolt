@@ -66,7 +66,7 @@
   @custom-media --lt-phone (width < 480px);
   @custom-media --lt-tablet (width < 769px);
   @custom-media --lt-desktop (width < 992px);
-  @custom-media --lt-wide-desktop (width < 1200px);
+  @custom-media --lt-wide-desktop (width < 1240px);
 
   @custom-media --tablet-and-up (width >= 768px);
   @custom-media --desktop-and-up (width >= 992px);
