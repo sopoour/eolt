@@ -6,8 +6,8 @@ const SearchBar = (props) => {
       type="text"
       placeholder="&#xf002; Search..."
       onFocus={props.onFocus}
-      onBlur={props.onInactivity}
-      onKeyDown={props.onInactivity}
+      onBlur={props.onBlur}
+      onKeyUp={props.onChange}
       //searchTerm saves the data from search input on every occurance of change event
       value={props.searchTerm}
       //handleChange takes event object as arg and set current value of form to searchTerm state using setSearchTerm method

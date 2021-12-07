@@ -32,7 +32,7 @@ const App = () => {
             <Contents isLoading={isLoading} httpError={httpError} data={data} />
           }
         />
-        <Route path="/eolt/contents/:contentId" element={<ContentDetail />} />
+        <Route path="/eolt/contents/:contentId" element={<ContentDetail data={data} />} />
         <Route path="/eolt/about-us" element={<About />} />
         <Route path="/eolt/support-us" element={<Support />} />
         <Route path="*" element={<NotFound />} />

@@ -12,7 +12,7 @@ const Home = (props) => {
   const { searchResults, searchTerm, handleChange } = useSearchData(props.data, true, setIsActive);
 
 
-  const handleInactivity = () => {
+  const handleBlur = () => {
       setIsActive(false)
   }
 
@@ -21,7 +21,8 @@ const Home = (props) => {
       <SearchBar
         searchTerm={searchTerm}
         onChange={handleChange}
-        onInactivity={handleInactivity}
+        onKeyUp={handleChange}
+        onBlur={handleBlur}
       />
       {isActive && (
         <CardContainer
