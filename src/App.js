@@ -1,49 +1,42 @@
 //import { useState } from "react";
 //import useApiData from "./hooks/useApiData";
-import Main from "./components/Main/Main";
+import Home from "./pages/Home";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import Contents from "./pages/Contents";
+import { Route, Routes } from "react-router-dom";
+import useApiData from "./hooks/useApiData";
+import ContentDetail from "./pages/ContentDetail";
+import About from "./pages/About";
+import Support from "./pages/Support";
+import NotFound from "./pages/NotFound"
 
 const App = () => {
-  const DUMMY_DATA = [
-    {
-      id: Math.random(),
-      title: "Emotions",
-      preview:
-        "The term ‘emotional investment’ implies that emotion can function as a resource, and that it can be invested into something.",
-      author: "Nina",
-      url: "https://en.wikipedia.org/wiki/Emotion_recognition",
-    },
-    {
-      id: Math.random(),
-      title: "Narratology",
-      preview:
-        "Narratology is the study of narrative. It developed from structuralist theory in the 1960s, during which literary texts comprised its field of research almost exclusively.",
-      author: "Frederik",
-      url: "https://en.wikipedia.org/wiki/Narratology",
-    },
-    {
-      id: Math.random(),
-      title: "Gameplay Loop",
-      preview:
-        "The gameplay loop is a common concept in conversations concerning the design and analysis of games, generally referring to repeated patterns of action and feedback that form during the engagement of a player with a game system.",
-      author: "Miruna",
-      url: "https://en.wikipedia.org/wiki/Twelve_Minutes",
-    },
-    {
-      id: Math.random(),
-      title: "Representation",
-      preview:
-        "The term representation originates from Latin and Old French denoting the act of bringing forth, exhibiting, and presenting.",
-      author: "Ida",
-      url: "https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning",
-    },
-  ];
+  const { data, httpError, isLoading } = useApiData();
+
+  // TODo: figure out how to define a route path so that path is relative → so I don't need to use /eolt but /eolt = /
 
   return (
     <div style={{ position: "relative" }}>
       <NavBar />
-      <Main />
+      <Routes>
+        <Route
+          path="/eolt"
+          element={
+            <Home isLoading={isLoading} httpError={httpError} data={data} />
+          }
+        />
+        <Route
+          path="/eolt/contents"
+          element={
+            <Contents isLoading={isLoading} httpError={httpError} data={data} />
+          }
+        />
+        <Route path="/eolt/contents/:contentId" element={<ContentDetail />} />
+        <Route path="/eolt/about-us" element={<About />} />
+        <Route path="/eolt/support-us" element={<Support />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Footer />
     </div>
   );

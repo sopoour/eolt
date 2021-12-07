@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.css"
 
 const Footer = () => {
@@ -9,7 +10,7 @@ const Footer = () => {
           <h2 className={styles.ftTitle}>About</h2>
           <ul>
             <li>
-              <a href="/">Project Group</a>
+              <Link to="/eolt/about-us">Project Group</Link>
             </li>
             <li>
               <a href="/">Editorial Information</a>
@@ -37,7 +38,7 @@ const Footer = () => {
           <h2 className={styles.ftTitle}>Support EoLT</h2>
           <ul>
             <li>
-              <a href="/">How to support us</a>
+              <Link to="/eolt/support-us">How to support us</Link>
             </li>
             <li>
               <a href="/">Make A Donation</a>

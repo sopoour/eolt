@@ -1,6 +1,6 @@
 @import "../UI/StyleVariables.css";
 
-nav {
+header {
   width: 100%;
   min-height: 10vh;
   box-sizing: border-box;
@@ -16,6 +16,17 @@ nav {
   padding: 0 1rem 0 1rem;
 }
 
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+header a:hover, header a:active {
+  text-decoration: none;
+  color: white;
+}
+
 .scrolled {
   background: var(--dark-grey);
 }
@@ -28,20 +39,25 @@ nav {
   align-content: center;
 }
 
-button {
+nav a {
+  text-align: center;
+  align-self: center;
   background: var(--light-grey);
   color: var(--darkblue);
-  align-self: center;
-  border: none;
   border-radius: 8px;
+  padding: 6px 4px;
   width: 100px;
-  height: 34px;
-  margin: 0 1% 1% 1%;
-  cursor: pointer;
+  height: 20px;
+  border: 1px solid var(--light-grey);
   box-shadow: 0 2px 5px rgba(220, 220, 220, 220, 0.2);
+  cursor: pointer;
 }
 
-button:hover {
+nav a:hover,
+nav a:active,
+a.active {
+  text-decoration: none;
+  background-color: var(--dark-grey);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
-  border-color: #189279;
+  color: white;
 }

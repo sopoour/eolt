@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import useViewport from "../../hooks/useVIewport";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = (props) => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,13 +24,31 @@ const NavBar = (props) => {
     width < breakpoint ? <h1>EoLT</h1> : <h1>Encyclopedia of Ludic Terms</h1>;
 
   return (
-    <nav className={navClasses}>
-      {content}
-      <div className={styles.buttonContainer}>
-        <button>About us</button>
-        <button>Support</button>
-      </div>
-    </nav>
+    <header className={navClasses}>
+      <Link to="/eolt"> {content} </Link>
+      <nav>
+        <div className={styles.buttonContainer}>
+          <NavLink
+            to="/eolt/about-us"
+            className={(navData) =>
+              navData.isActive ? styles.active : styles.btnLight
+            }
+          >
+            {" "}
+            About us
+          </NavLink>
+          <NavLink
+            to="/eolt/support-us"
+            className={(navData) =>
+              navData.isActive ? styles.active : styles.btnLight
+            }
+          >
+            {" "}
+            Support
+          </NavLink>
+        </div>
+      </nav>
+    </header>
   );
 };
 

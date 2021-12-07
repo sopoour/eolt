@@ -7,10 +7,10 @@ import useApiData from "../../hooks/useApiData";
 const Main = (props) => {
   const { data, httpError, isLoading } = useApiData();
   return (
-    <div className={styles.wrapper}>
+    <main className={styles.wrapper}>
       <Wiki isLoading={isLoading} httpError={httpError} data={data} />
       <Info />
-    </div>
+    </main>
   );
 };
 
