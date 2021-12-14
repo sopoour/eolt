@@ -2,8 +2,8 @@ const spaceID = process.env.REACT_APP_CONTENFUL_SPACE_ID;
 const accessToken = process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN;
 
 const client = require("contentful").createClient({
-  space: {spaceID},
-  accessToken: {accessToken},
+  space: spaceID,
+  accessToken: accessToken,
 });
 
 const getArticles = () =>
