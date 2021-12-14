@@ -23,16 +23,16 @@ const App = () => {
         <Route
           path="/eolt"
           element={
-            <Home isLoading={isLoading} httpError={httpError} data={data} />
+            <Home isLoading={isLoading} httpError={httpError}/>
           }
         />
         <Route
           path="/eolt/contents"
           element={
-            <Contents isLoading={isLoading} httpError={httpError} data={data} />
+            <Contents isLoading={isLoading} httpError={httpError}/>
           }
         />
-        <Route path="/eolt/contents/:contentId" element={<ContentDetail data={data} />} />
+        <Route path="/eolt/contents/:contentId" element={<ContentDetail/>} />
         <Route path="/eolt/about-us" element={<About />} />
         <Route path="/eolt/support-us" element={<Support />} />
         <Route path="*" element={<NotFound />} />

@@ -5,12 +5,14 @@ import useSearchData from "../hooks/useSearchData";
 import Section from "../components/UI/Section/Section";
 import CardContainer from "../components/CardContainer/CardContainer";
 import { Link } from "react-router-dom";
+import { useArticles } from "../hooks/useArticles";
 
-const Home = (props) => {
+const Home = () => {
+  const [articles, isLoading] = useArticles();
   const [isActive, setIsActive] = useState(false);
 
   const { searchResults, searchTerm, handleChange } = useSearchData(
-    props.data,
+    articles,
     true,
     setIsActive
   );
@@ -30,8 +32,8 @@ const Home = (props) => {
         />
         {isActive && (
           <CardContainer
-            isLoading={props.isLoading}
-            httpError={props.httpError}
+            isLoading={isLoading}
+            /* httpError={props.httpError} */
             data={searchResults}
           />
         )}

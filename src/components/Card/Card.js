@@ -3,16 +3,15 @@ import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 
 const Card = (props) => {
+  const key = props.data.fields.slug;
   return (
-    <div className={styles.cardsWrapper}>
+    <Link className={styles.cardsWrapper} style={{textDecoration: "none"}} key={key} to={key}>
       <div className={styles.card}>
-        <Link to={props.data.id}>
-          <h1>{props.data.title}</h1>
-        </Link>
-        <p> {props.data.preview}</p>
-        <p>Author: {props.data.author}</p>
+        <h1>{props.data.fields.mainTitle}</h1>
+        <p> {props.data.fields.abstract}</p>
+        <p>Author: {props.data.fields.author}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
