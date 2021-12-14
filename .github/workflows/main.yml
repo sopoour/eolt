@@ -24,7 +24,9 @@ jobs:
         REACT_APP_CONTENFUL_SPACE_ID: ${{ secrets.REACT_APP_CONTENFUL_SPACE_ID }}
 
     - name: Deploy
-      uses: sopoour/github-pages-deploy-action@releases/v3
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: build
+
