@@ -10,7 +10,7 @@ const Footer = () => {
           <h2 className={styles.ftTitle}>About</h2>
           <ul>
             <li>
-              <Link to="/eolt/about-us">Project Group</Link>
+              <Link to="/about-us">Project Group</Link>
             </li>
             <li>
               <a href="/">Editorial Information</a>
@@ -38,7 +38,7 @@ const Footer = () => {
           <h2 className={styles.ftTitle}>Support EoLT</h2>
           <ul>
             <li>
-              <Link to="/eolt/support-us">How to support us</Link>
+              <Link to="/support-us">How to support us</Link>
             </li>
             <li>
               <a href="/">Make A Donation</a>

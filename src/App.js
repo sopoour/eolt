@@ -12,27 +12,25 @@ import NotFound from "./pages/NotFound"
 
 const App = () => {
 
-  // TODo: figure out how to define a route path so that path is relative → so I don't need to use /eolt but /eolt = /
-
   return (
     <div style={{ position: "relative" }}>
       <NavBar />
       <Routes>
         <Route
-          path="/eolt"
+          path="/"
           element={
             <Home />
           }
         />
         <Route
-          path="/eolt/contents"
+          path="/contents"
           element={
             <Contents />
           }
         />
-        <Route path="/eolt/contents/:contentId" element={<ContentDetail/>} />
-        <Route path="/eolt/about-us" element={<About />} />
-        <Route path="/eolt/support-us" element={<Support />} />
+        <Route path="/contents/:contentId" element={<ContentDetail/>} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="/support-us" element={<Support />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

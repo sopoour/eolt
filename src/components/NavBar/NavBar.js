@@ -25,11 +25,11 @@ const NavBar = (props) => {
 
   return (
     <header className={navClasses}>
-      <Link to="/eolt"> {content} </Link>
+      <Link to="/"> {content} </Link>
       <nav>
         <div className={styles.buttonContainer}>
           <NavLink
-            to="/eolt/about-us"
+            to="about-us"
             className={(navData) =>
               navData.isActive ? styles.active : styles.btnLight
             }
@@ -38,7 +38,7 @@ const NavBar = (props) => {
             About us
           </NavLink>
           <NavLink
-            to="/eolt/support-us"
+            to="support-us"
             className={(navData) =>
               navData.isActive ? styles.active : styles.btnLight
             }

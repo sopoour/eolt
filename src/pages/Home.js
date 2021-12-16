@@ -42,7 +42,7 @@ const Home = () => {
       {!isActive && (
         <React.Fragment>
           <Link
-            to="/eolt/contents"
+            to="contents"
             className="btnDark centered"
             style={{ width: "100px", height: "20px" }}
           >
