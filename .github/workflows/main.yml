@@ -13,8 +13,8 @@ jobs:
     steps:
     
     - uses: actions/checkout@v1
-    - run: git config --global user.email ${{ secrets.USER_EMAIL }}
-    - run: git config --global user.name ${{ secrets.USER_NAME }}
+    - with:
+        persist-credentials: false
 
     - name: Build
       run: |
